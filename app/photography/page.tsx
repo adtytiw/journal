@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import la from 'public/images/photos/la.webp';
+import light from 'public/images/photos/light.webp';
 import crescent from 'public/images/photos/crescent.webp';
 
 export const metadata: Metadata = {
@@ -15,13 +15,13 @@ export default function UsesPage() {
         photography
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
-        Creating my digital footprints to save the planet.
+        Growing my digital garden, one photo at a time.
       </p>
       <div className="columns-2 sm:columns-3 gap-4 my-8">
         <div className="relative h-80 mb-4">
           <Image
-            alt="LA sunset in Wilshire Boulevard"
-            src={la}
+            alt="moon za moooooooooooon!"
+            src={crescent}
             placeholder="blur"
             fill
             sizes="(max-width: 768px) 213px, 33vw"
@@ -108,8 +108,8 @@ export default function UsesPage() {
         </div> */}
         <div className="relative h-80 mb-4">
           <Image
-            alt="The moon slowly fading away"
-            src={crescent}
+            alt="The light shadowing down the tree, gracefully"
+            src={light}
             placeholder="blur"
             fill
             sizes="(max-width: 768px) 213px, 33vw"
