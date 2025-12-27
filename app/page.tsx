@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        Hey, this is Aditya 👋
+        Hey, this is Aditya 
       </h1>
       <p className="prose prose-neutral dark:prose-invert">
         I am a ML developer in 2nd year of college. 

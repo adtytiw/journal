@@ -10,15 +10,15 @@ import { SandpackCSS } from "./blog/[slug]/sandpack";
 export const metadata: Metadata = {
   metadataBase: new URL("https://afgk.me"),
   title: {
-    default: "Jules Liu",
-    template: "%s | Jules Liu",
+    default: "Aditya Tiwari",
+    template: "%s | Aditya Tiwari",
   },
   description: "Developer, writer, and creator.",
   openGraph: {
-    title: "Jules Liu",
+    title: "Aditya Tiwari",
     description: "Developer, writer, and creator.",
     url: "https://afgk.me",
-    siteName: "Jules Liu",
+    siteName: "Aditya Tiwari",
     locale: "en_US",
     type: "website",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   manifest: "/images/favicons-alt/site.webmanifest",
   twitter: {
-    title: "Jules Liu",
+    title: "Aditya Tiwari",
     card: "summary_large_image",
   },
 };

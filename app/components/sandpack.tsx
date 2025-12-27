@@ -60,7 +60,7 @@ export function LiveCode({ example }: { example: string }) {
           fallback={'Oops, there was an error loading the CodeSandbox'}
         >
           <Sandpack
-            theme="auto"
+            theme="dark"
             files={{
               'App.tsx': {
                 code: stylexApp,
@@ -93,7 +93,7 @@ export function LiveCode({ example }: { example: string }) {
       <ErrorBoundary
         fallback={'Oops, there was an error loading the CodeSandbox.'}
       >
-        <Sandpack theme="auto" template="static" files={files} />
+        <Sandpack theme="dark" template="static" files={files} />
       </ErrorBoundary>
     </Suspense>
   );

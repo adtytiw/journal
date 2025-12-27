@@ -104,7 +104,7 @@ export default function Blog({ params }) {
             url: `https://afgk.me/blog/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "Jules Liu",
+              name: "Aditya Tiwari",
             },
           }),
         }}
