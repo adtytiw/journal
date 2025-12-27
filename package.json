@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build-setup": "npm run setup && next build",
+    "build": "next build",
+    "start": "next start",
+    "setup": "node ./setup.mjs"
+  },
+  "dependencies": {
+    "@codesandbox/sandpack-react": "2.12.0",
+    "@googleapis/youtube": "^13.1.0",
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/node": "20.10.0",
+    "@types/react": "18.2.38",
+    "@types/react-dom": "18.2.17",
+    "@vercel/analytics": "^1.3.1",
+    "@vercel/blob": "^0.20.0",
+    "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.5",
+    "geist": "1.2.2",
+    "next": "14.2.6",
+    "next-auth": "5.0.0-beta.3",
+    "next-mdx-remote": "^4.4.1",
+    "postcss": "^8.4.41",
+    "postgres": "^3.4.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-pdf": "^8.0.2",
+    "react-tweet": "3.2.0",
+    "sharp": "^0.33.4",
+    "sugar-high": "^0.5.6",
+    "tailwindcss": "^3.4.7",
+    "typescript": "5.3.3"
+  },
+  "overrides": {
+    "string-width": "4.2.3"
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
