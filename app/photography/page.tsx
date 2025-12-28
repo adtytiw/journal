@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import light from 'public/images/photos/light.webp';
 import crescent from 'public/images/photos/crescent.webp';
+import aura from 'public/images/zoo.webp'
 
 export const metadata: Metadata = {
   title: 'Photography',
@@ -117,17 +118,17 @@ export default function UsesPage() {
             className="rounded-lg object-cover"
           />
         </div>
-        {/* <div className="relative h-80 mb-4">
+        <div className="relative h-80 mb-4">
           <Image
-            alt="Evening sunset next to the highway"
-            src={evening}
+            alt="behold mr. aura farmer himself"
+            src={aura}
             placeholder="blur"
             fill
             sizes="(max-width: 768px) 213px, 33vw"
             priority
             className="rounded-lg object-cover"
           />
-        </div> */}
+        </div>
         {/* <div className="relative h-80 mb-4">
           <Image
             alt="Sneak peek outside of a parking lot in Laguna Beach"
