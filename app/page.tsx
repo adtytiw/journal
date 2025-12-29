@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 // individual image imports
 import vapi from 'public/images/vapi.webp';
 import sadcar from 'public/images/giphy.gif';
@@ -9,12 +12,43 @@ import sunflower from 'public/images/sunflower.webp';
 // back button icon
 import ArrowIcon from './components/arrow-icon';
 
+function IndianTime() {
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      setTime(now.toLocaleTimeString('en-US', options));
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return <span className="text-sm text-neutral-500 dark:text-neutral-500">{time} IST</span>;
+}
+
 export default function Page() {
   return (
-    <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">
+    <section className="min-h-screen flex flex-col">
+      <h1 className="font-medium text-2xl mb-2 tracking-tighter">
         Hey, this is Aditya
       </h1>
+      <div className="mb-4 flex items-center gap-2">
+        <span className="relative flex h-2 w-2">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+        </span>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">Available for opportunities</p>
+      </div>
       <p className="prose prose-neutral dark:prose-invert">
         I am a ML developer in 2nd year of college @<a href="https://www.google.com/search?q=navi+mumbai" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-4 hover:underline">Navi mumbai, Mh</a>.
         Keen on deep learning, Fullstack software development & more.
@@ -48,7 +82,39 @@ export default function Page() {
           <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">NLP</span>
         </div>
       </div>
-      <div className="columns-2 sm:columns-3 gap-4 my-8">
+      <div className="my-6 w-full h-64 rounded-lg bg-neutral-100 dark:bg-neutral-900 px-2">
+        <p className="px-2 py-1 font-semibold text-md pt-2">Drop a message</p>
+        <div className="mt-1">
+          <form action="mailto:aditya80.tiwari@gmail.com" method="post" encType="text/plain" className="px-1">
+            <div className="space-y-2 w-full">
+              <input
+                type="email"
+                placeholder="your email"
+                className="flex h-10 w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 text-neutral-900 dark:text-neutral-100"
+                name="email"
+              />
+            </div>
+            <div className="mt-2 flex gap-3 w-full">
+              <div className="space-y-2 w-full">
+                <textarea
+                  placeholder="your message here"
+                  className="flex min-h-[60px] rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 h-28 w-full text-neutral-900 dark:text-neutral-100"
+                  name="message"
+                />
+              </div>
+            </div>
+            <div className="mt-3 flex justify-end">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600 disabled:pointer-events-none disabled:opacity-50 bg-neutral-900 dark:bg-neutral-100 text-neutral-100 dark:text-neutral-900 shadow hover:bg-neutral-800 dark:hover:bg-neutral-200 px-4 py-2 w-36 h-8"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      {/* <div className="columns-2 sm:columns-3 gap-4 my-8">
         <div className="relative h-40 mb-4">
           <Image
             alt="sunflower near kharghar"
@@ -114,11 +180,9 @@ export default function Page() {
             className="rounded-lg object-cover"
           />
         </div>
-      </div>
-      <div className="prose prose-neutral dark:prose-invert">
-        <p>you can find me here.</p>
-      </div>
-      <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
+      </div> */}
+      <p className="mb-0 text-neutral-900 dark:text-neutral-100">you can find me here.</p>
+      <ul className="flex flex-col md:flex-row mt-4 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
           <a
             className="flex items-center hover:text-neutral-800 dark:hover:text-neutral-100 transition-all"
@@ -153,6 +217,10 @@ export default function Page() {
           </a>
         </li>
       </ul>
+      <footer className="mt-auto py-4 border-t border-neutral-200 dark:border-neutral-800 flex justify-between items-center text-sm">
+        <IndianTime />
+        <span className="text-neutral-400 dark:text-neutral-600">© 2025</span>
+      </footer>
     </section>
   );
 }
