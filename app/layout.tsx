@@ -8,7 +8,7 @@ import { PreloadResources } from "./preload";
 import { SandpackCSS } from "./blog/[slug]/sandpack";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://afgk.me"),
+  metadataBase: new URL("https://journ.dev"),
   title: {
     default: "Aditya Tiwari",
     template: "%s | Aditya Tiwari",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aditya Tiwari",
     description: "Developer, writer, and creator.",
-    url: "https://afgk.me",
+    url: "https://journ.dev",
     siteName: "Aditya Tiwari",
     locale: "en_US",
     type: "website",

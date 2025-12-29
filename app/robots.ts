@@ -5,7 +5,7 @@ export default function robots() {
         userAgent: '*',
       },
     ],
-    sitemap: 'https://afgk.me/sitemap.xml',
-    host: 'https://afgk.me',
+    sitemap: 'https://journ.dev/sitemap.xml',
+    host: 'https://journ.dev',
   };
 }

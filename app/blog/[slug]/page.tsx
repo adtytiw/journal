@@ -19,8 +19,8 @@ export async function generateMetadata({
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = `https://afgk.me${image}`;
-  // : `https://afgk.me/og?title=${title}`;
+  let ogImage = `https://journ.dev${image}`;
+  // : `https://journ.dev/og?title=${title}`;
 
   return {
     title,
@@ -30,7 +30,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime,
-      url: `https://afgk.me/blog/${post.slug}`,
+      url: `https://journ.dev/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -99,9 +99,9 @@ export default function Blog({ params }) {
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
-            image: `https://afgk.me${post.metadata.image}`,
-            // : `https://afgk.me/og?title=${post.metadata.title}`,
-            url: `https://afgk.me/blog/${post.slug}`,
+            image: `https://journ.dev${post.metadata.image}`,
+            // : `https://journ.dev/og?title=${post.metadata.title}`,
+            url: `https://journ.dev/blog/${post.slug}`,
             author: {
               "@type": "Person",
               name: "Aditya Tiwari",
