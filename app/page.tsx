@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 // individual image imports
 import vapi from 'public/images/vapi.webp';
 import sadcar from 'public/images/giphy.gif';
@@ -11,6 +14,7 @@ import sunflower from 'public/images/sunflower.webp';
 import ArrowIcon from './components/arrow-icon';
 
 export default function Page() {
+  const [showMessage, setShowMessage] = useState(false);
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
@@ -21,28 +25,17 @@ export default function Page() {
         Keen on deep learning, Fullstack software development & more.
       </p>
       <div className="my-6">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">languages</p>
         <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Python</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Java</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">C</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">TypeScript</span>
-        </div>
-      </div>
-      <div className="my-6">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">web & data</p>
-        <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">HTML, CSS, JS</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Next.js</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">PostgreSQL</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">TensorFlow</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Pandas</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">NumPy</span>
-        </div>
-      </div>
-      <div className="my-6">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">tools</p>
-        <div className="flex flex-wrap gap-2">
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Git</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">GitHub</span>
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Docker</span>
@@ -50,14 +43,14 @@ export default function Page() {
           <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Vercel</span>
         </div>
       </div>
-      <div className="my-6">
-        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">learning</p>
+      <div className="my-4">
+        <p className="text-xs text-neutral-500 dark:text-neutral-500 mb-2">learning</p>
         <div className="flex flex-wrap gap-2">
-          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">PyTorch</span>
-          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Scikit-learn</span>
-          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Computer Vision</span>
-          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Transformers</span>
-          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">NLP</span>
+          <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">PyTorch</span>
+          <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">Scikit-learn</span>
+          <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">Computer Vision</span>
+          <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">Transformers</span>
+          <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">NLP</span>
         </div>
       </div>
       <div className="columns-2 sm:columns-3 gap-4 my-8">
@@ -127,8 +120,21 @@ export default function Page() {
           />
         </div>
       </div>
+      <button onClick={() => setShowMessage(true)} className="flex items-center gap-2 w-auto px-4 py-2 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-all">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path>
+        </svg>
+        Download Resume
+      </button>
+      {showMessage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50" onClick={() => setShowMessage(false)}>
+          <div className="bg-white dark:bg-neutral-900 px-6 py-4 rounded-lg shadow-lg max-w-sm">
+            <p className="text-neutral-800 dark:text-neutral-200">Resume coming soon...</p>
+          </div>
+        </div>
+      )}
       <div className="prose prose-neutral dark:prose-invert">
-        <p>you can find me from these links.</p>
+        <p>you can find me here.</p>
       </div>
       <ul className="flex flex-col md:flex-row mt-8 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
