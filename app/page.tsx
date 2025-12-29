@@ -82,38 +82,6 @@ export default function Page() {
           <span className="px-3 py-1 text-sm bg-neutral-50 dark:bg-neutral-900 text-neutral-500 dark:text-neutral-400 rounded-full">NLP</span>
         </div>
       </div>
-      <div className="my-6 w-full h-64 rounded-lg bg-neutral-100 dark:bg-neutral-900 px-2">
-        <p className="px-2 py-1 font-semibold text-md pt-2">Drop a message</p>
-        <div className="mt-1">
-          <form action="mailto:aditya80.tiwari@gmail.com" method="post" encType="text/plain" className="px-1">
-            <div className="space-y-2 w-full">
-              <input
-                type="email"
-                placeholder="your email"
-                className="flex h-10 w-full rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 text-neutral-900 dark:text-neutral-100"
-                name="email"
-              />
-            </div>
-            <div className="mt-2 flex gap-3 w-full">
-              <div className="space-y-2 w-full">
-                <textarea
-                  placeholder="your message here"
-                  className="flex min-h-[60px] rounded-md border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-black px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-400 dark:focus:ring-neutral-600 disabled:cursor-not-allowed disabled:opacity-50 h-28 w-full text-neutral-900 dark:text-neutral-100"
-                  name="message"
-                />
-              </div>
-            </div>
-            <div className="mt-3 flex justify-end">
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-neutral-400 dark:focus-visible:ring-neutral-600 disabled:pointer-events-none disabled:opacity-50 bg-neutral-900 dark:bg-neutral-100 text-neutral-100 dark:text-neutral-900 shadow hover:bg-neutral-800 dark:hover:bg-neutral-200 px-4 py-2 w-36 h-8"
-              >
-                Send
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
       {/* <div className="columns-2 sm:columns-3 gap-4 my-8">
         <div className="relative h-40 mb-4">
           <Image
@@ -181,7 +149,7 @@ export default function Page() {
           />
         </div>
       </div> */}
-      <p className="mb-0 text-neutral-900 dark:text-neutral-100">you can find me here.</p>
+      <p className="mt-4 mb-0 text-neutral-900 dark:text-neutral-100">you can find me here.</p>
       <ul className="flex flex-col md:flex-row mt-4 space-x-0 md:space-x-4 space-y-2 md:space-y-0 font-sm text-neutral-600 dark:text-neutral-300">
         <li>
           <a
