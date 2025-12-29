@@ -20,6 +20,46 @@ export default function Page() {
         I am a ML developer in 2nd year of college @<a href="https://www.google.com/search?q=navi+mumbai" target="_blank" rel="noopener noreferrer" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 underline decoration-neutral-400 dark:decoration-neutral-600 underline-offset-4 hover:underline">Navi mumbai, Mh</a>.
         Keen on deep learning, Fullstack software development & more.
       </p>
+      <div className="my-6">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">languages</p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Python</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Java</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">C</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">TypeScript</span>
+        </div>
+      </div>
+      <div className="my-6">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">web & data</p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">HTML, CSS, JS</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Next.js</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">PostgreSQL</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">TensorFlow</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Pandas</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">NumPy</span>
+        </div>
+      </div>
+      <div className="my-6">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">tools</p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Git</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">GitHub</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Docker</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Linux</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Vercel</span>
+        </div>
+      </div>
+      <div className="my-6">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-3">learning</p>
+        <div className="flex flex-wrap gap-2">
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">PyTorch</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Scikit-learn</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Computer Vision</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">Transformers</span>
+          <span className="px-3 py-1 text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 rounded-full">NLP</span>
+        </div>
+      </div>
       <div className="columns-2 sm:columns-3 gap-4 my-8">
         <div className="relative h-40 mb-4">
           <Image
