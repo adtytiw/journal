@@ -70,7 +70,19 @@ Open the current project from Command Prompt with:
 code .
 ```
 
-## Common errors
+## Setup complete
+
+Run these commands one at a time:
+
+```cmd
+git --version
+gh --version
+code --version
+```
+
+If all three commands print version information, you are done. Git, GitHub CLI, and VS Code are installed and ready to use. If any command is not recognized or returns an error, check the troubleshooting steps below.
+
+## If something went wrong
 
 ### `winget` is not recognized
 
@@ -114,18 +126,6 @@ Wait for Windows Update or another setup program to finish, then retry. If the p
 ```cmd
 winget list --id Git.Git
 ```
-
-## Final check
-
-This command should print a version for each tool:
-
-```cmd
-git --version
-gh --version
-code --version
-```
-
-With those three commands working, you have the basic Windows toolchain needed to clone a repository, authenticate with GitHub, and open the project in VS Code.
 
 ## Extra: Sign in to GitHub
 
