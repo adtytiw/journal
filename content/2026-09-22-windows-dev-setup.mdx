@@ -1,0 +1,134 @@
+---
+title: 'Windows development setup for Git workshop'
+publishedAt: '2026-09-22'
+summary: 'Install Git, GitHub CLI, and Visual Studio Code on Windows from PowerShell, then fix the common winget errors.'
+---
+
+If you are setting up a Windows machine for development, `winget` is a quick way to install the tools you need without downloading each installer manually. This guide installs Git, GitHub CLI, and Visual Studio Code from PowerShell.
+
+## Before you start
+
+Use Windows 10 version 1809 or later, or Windows 11, and open **PowerShell**. You do not normally need to run it as Administrator, but Windows may ask for permission when an installer needs elevation.
+
+Check that `winget` is available:
+
+```powershell
+winget --version
+```
+
+If it prints a version number, you are ready to continue.
+
+## Install Git
+
+Git tracks changes in your projects and is required by many development tools. Install it with:
+
+```powershell
+winget install --id Git.Git -e --source winget
+```
+
+Close and reopen PowerShell after the installation, then verify it:
+
+```powershell
+git --version
+```
+
+## Install GitHub CLI
+
+GitHub CLI, or `gh`, lets you work with repositories, issues, pull requests, and GitHub Actions from the terminal:
+
+```powershell
+winget install --id GitHub.cli -e --source winget
+```
+
+Verify the installation:
+
+```powershell
+gh --version
+```
+
+## Install Visual Studio Code
+
+Visual Studio Code is a lightweight editor with an integrated terminal and extensions:
+
+```powershell
+winget install --id Microsoft.VisualStudioCode -e --source winget
+```
+
+Check that the command-line launcher is available:
+
+```powershell
+code --version
+```
+
+Open the current project from PowerShell with:
+
+```powershell
+code .
+```
+
+## Common errors
+
+### `winget` is not recognized
+
+`winget` is provided by **App Installer** from the Microsoft Store. Open the Microsoft Store, search for **App Installer**, update or install it, and then reopen PowerShell. You can also check whether Windows can find it:
+
+```powershell
+Get-Command winget
+```
+
+### No package found matching input criteria
+
+The package source may be unavailable or the package ID may have been entered incorrectly. Search the source and use the exact ID:
+
+```powershell
+winget search Git.Git --source winget
+```
+
+If the search still fails, refresh the source:
+
+```powershell
+winget source reset --force
+winget source update
+```
+
+Then retry the install command.
+
+### `git`, `gh`, or `code` is not recognized after installation
+
+The installer usually updates `PATH`, but already-open terminals do not automatically reload it. Close every PowerShell or Command Prompt window, open a new one, and run the version command again.
+
+If `code` is still unavailable, reinstall VS Code and make sure the installer option to add `code` to `PATH` is enabled. You can also launch VS Code from its Start menu shortcut while troubleshooting.
+
+### Installer requires administrator approval
+
+Accept the Windows permission prompt, or open PowerShell as Administrator and run the command again. On a managed work or school computer, an administrator may have disabled app installation; contact the device administrator in that case.
+
+### Installation fails because another installer is running
+
+Wait for Windows Update or another setup program to finish, then retry. If the package is partially installed, check its status first:
+
+```powershell
+winget list --id Git.Git
+```
+
+## Final check
+
+This command should print a version for each tool:
+
+```powershell
+git --version
+gh --version
+code --version
+```
+
+With those three commands working, you have the basic Windows toolchain needed to clone a repository, authenticate with GitHub, and open the project in VS Code.
+
+## Extra: Sign in to GitHub
+
+You do not need to sign in just to install the tools. When you are ready to use GitHub CLI with your account, run:
+
+```powershell
+gh auth login
+```
+
+Choose **GitHub.com**, your preferred protocol, and the browser-based login option. The CLI will open a browser and give you a one-time code to confirm.
